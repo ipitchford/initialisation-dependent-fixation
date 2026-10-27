@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "Please cite this versioned research candidate by its DOI."
+title: "Initialisation-dependent fixation in noisy weighted voter models: a resolution of Conjecture 2 of Ganesh, Hauert and Valla"
+type: software
+authors:
+  - name: Anonymous
+version: 1.0.0-candidate
+doi: 10.5281/zenodo.23687032
+date-released: 2026-10-27
+repository-code: "https://github.com/ipitchford/initialisation-dependent-fixation"
+url: "https://evidencepress.org/releases/initialisation-dependent-fixation/"
+license:
+  - CC0-1.0
+  - MIT
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23687032
+    description: "Version DOI (1.0.0-candidate)"
+  - type: doi
+    value: 10.5281/zenodo.23687031
+    description: "Concept DOI (all versions)"
+keywords:
+  - weighted voter model
+  - fixation probability
+  - inspection paradox
+  - renewal process
+  - branching process
+  - swarm consensus
+abstract: "Conjecture 2 of Ganesh, Hauert and Valla (Swarm Intelligence 2025) predicts the large-population probability that k agents holding the better option win in the noisy weighted voter model, using the equilibrium law of signalling rates although the initial rates are freshly sampled. On the complete graph with bounded, separated rate supports, the limit is governed by the transient mean resident rate; it strictly exceeds the conjectured value whenever resident rates vary, so the conjecture fails as stated. Under the equilibrium start the formula is exact for a constant favourable rate, and is replaced by 1-(E T_B/E T_A)^k for varied favourable rates. The single-founder underestimate has supremum 27.3355 percentage points. Unrefereed candidate; internal AI-assisted review only. Text and data CC0-1.0; code MIT."
+references:
+  - type: article
+    title: "Consensus in the weighted voter model with noise-free and noisy observations"
+    authors:
+      - family-names: Ganesh
+        given-names: Ayalvadi
+      - family-names: Hauert
+        given-names: Sabine
+      - family-names: Valla
+        given-names: Emma
+    year: 2025
+    doi: 10.1007/s11721-025-00248-z

@@ -1,0 +1,115 @@
+{
+ "schemaVersion": "1.0",
+ "slug": "initialisation-dependent-fixation",
+ "version": "1.0.0-candidate",
+ "doi": "10.5281/zenodo.23687032",
+ "status": "unrefereed-candidate",
+ "creator": "Anonymous",
+ "source": {
+  "citation": "Ganesh, A., Hauert, S., & Valla, E. (2025). Consensus in the weighted voter model with noise-free and noisy observations. Swarm Intelligence, 19(3), 173-214.",
+  "doi": "10.1007/s11721-025-00248-z",
+  "target": "Conjecture 2"
+ },
+ "scope": "Complete graph K_N, N to infinity with k fixed; exponential signalling periods; bounded rates with separated supports 0<a_-<=a_+<b_-<=b_+<infinity (every favourable rate strictly below every resident rate).",
+ "claims": [
+  {
+   "id": "T1",
+   "location": "Theorem 1, Proposition 3.6",
+   "kind": "theorem",
+   "evidence": "written proof",
+   "statement": "For a constant favourable rate a and any initial resident law nu, lim alpha_k(N;nu) = 1-(1-c_nu)^k with c_nu = [1 + a int_0^inf exp(-int_0^t (b_nu(s)-a) ds) dt]^{-1}, b_nu(t) the mean rate of the resident reset process started from nu."
+  },
+  {
+   "id": "T2",
+   "location": "Theorem 2",
+   "kind": "theorem",
+   "evidence": "written proof",
+   "statement": "If the resident law F is not a point mass, b_F(t) > lambda for all t>=0 and c_F > 1-a/lambda, so the fresh-start limit strictly exceeds the conjectured 1-(a/lambda)^k. Conjecture 2 is false as stated whenever resident rates vary."
+  },
+  {
+   "id": "W1",
+   "location": "(32)-(33), Appendix A",
+   "kind": "certified-value",
+   "evidence": "exact rational enclosure (certify_limits.py)",
+   "statement": "a=1, F=(delta_2+delta_6)/2: c_F = 0.702032053928212... (certified to 30 digits), versus conjectured 2/3."
+  },
+  {
+   "id": "T3",
+   "location": "Theorem 3",
+   "kind": "theorem",
+   "evidence": "written proof",
+   "statement": "At fixed harmonic mean lambda and minimum resident rate b_0>a, sup c_F = (lambda-a)/(lambda-a+a e^{-(lambda/b_0-1)}), not attained."
+  },
+  {
+   "id": "P51",
+   "location": "Proposition 5.1, (41)",
+   "kind": "theorem",
+   "evidence": "written proof; rational bracket",
+   "statement": "Over all constant a and resident laws with compact support in (a,infinity), the supremum of the single-founder underestimate c_F-(1-a/lambda) is Delta(xi_*) in (0.2733554343215126, 0.2733554343215181), not attained."
+  },
+  {
+   "id": "CAP",
+   "location": "(42)-(43), Table 3, abstract",
+   "kind": "bound-and-numerics",
+   "evidence": "proved bound (43); floating evaluation",
+   "statement": "With resident rate ratio bbar/b_0 <= 3, the proved ceiling (43) is below 8.27 points (tends to 8.27 as b_0/a->1; 7.77 at b_0/a=1.25). At ratio 10 the ceiling tends to about 22.5 points."
+  },
+  {
+   "id": "BURN",
+   "location": "Section 6, (44)-(46)",
+   "kind": "theorem",
+   "evidence": "written proof",
+   "statement": "After burn-in tau, 0 <= c_tau - gamma/lambda <= L D e^{-b_0 tau}; the k-founder probability error is at most k(a/lambda)^{k-1} L D e^{-b_0 tau}."
+  },
+  {
+   "id": "T4",
+   "location": "Theorem 4",
+   "kind": "theorem",
+   "evidence": "written proof",
+   "statement": "For a general favourable law F_A, lim alpha_k = 1-[int e_0 d nu^A]^k with e_0 from the backward equations (47)-(49) of a multitype time-inhomogeneous branching process."
+  },
+  {
+   "id": "C5",
+   "location": "Corollary 5",
+   "kind": "theorem",
+   "evidence": "written proof",
+   "statement": "Fresh residents give a strictly larger limit than equilibrium residents for every initial favourable law when F is not a point mass; with nu^A=F_A the fresh limit strictly exceeds the conjectured 1-pi^k."
+  },
+  {
+   "id": "T6",
+   "location": "Theorem 6",
+   "kind": "theorem",
+   "evidence": "written proof; exact identity check for four laws",
+   "statement": "From the equilibrium start (nu=mu, nu^A=G_A), lim alpha_k = 1-(E T_B / E T_A)^k = 1-(lambda m_A)^{-k}."
+  },
+  {
+   "id": "C7",
+   "location": "Corollary 7",
+   "kind": "theorem",
+   "evidence": "written proof",
+   "statement": "Under the equilibrium start simulated by the source, the limit strictly exceeds the conjectured 1-pi^k whenever F_A is not a point mass; equality for constant favourable rate (equation (7))."
+  },
+  {
+   "id": "W2",
+   "location": "Table 1, Section 7.4",
+   "kind": "numerical-value",
+   "evidence": "floating ODE integration, not certified; strict inequality proved by Corollary 5",
+   "statement": "Favourable rates 1/2 or 1, resident rates 2 or 6 (each 1/2), fresh start: limit 0.7842272... versus conjectured (3+sqrt 37)/12 = 0.7568969...; equilibrium start 7/9 exactly."
+  }
+ ],
+ "confirms": [
+  "Conjecture 2's formula under the equilibrium start for a constant favourable rate (equation (7))",
+  "Theorem 5 of the source (the stationary branching calculation) is untouched"
+ ],
+ "refutes": [
+  "Conjecture 2 as stated (fresh initial samples), whenever resident rates vary",
+  "Conjecture 2's formula under the equilibrium start when favourable rates vary"
+ ],
+ "open": [
+  "overlapping supports, including Gamma-noise examples",
+  "non-complete graphs",
+  "sharp envelope under a rate cap",
+  "finite-N rate",
+  "non-exponential signalling"
+ ]
+}

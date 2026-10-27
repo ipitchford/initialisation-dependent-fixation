@@ -1,0 +1,181 @@
+target_id: noisy-weighted-voter-fresh-resident-fixation
+search_date: 2026-10-19
+intended_contribution_unit: theorem
+claim:
+  exact_statement: |
+    Fix a>0, 0<a<b_minus<=b_plus<infinity, two probability laws F and nu
+    supported on [b_minus,b_plus], and an integer k>=1. On the complete
+    graph K_N without self-neighbours, N>k vertices hold opinions A or B.
+    A vertices update at constant rate a; a B vertex currently carrying rate
+    r updates at rate r. At each update the vertex copies a uniformly chosen
+    different vertex. If its copied opinion is B it independently redraws its
+    rate from F, including when its opinion remains B. If its copied opinion
+    is A its rate becomes a. Initially k vertices are A and the remaining
+    rates are independent with law nu. Let alpha_k(N;nu) be the probability
+    of eventual all-A consensus. Let R(t) be the autonomous resident reset
+    chain with generator Lf(r)=r(int f(s)F(ds)-f(r)) and R(0)~nu.
+    Put b_nu(t)=E[R(t)], A_nu(t)=int_0^t(b_nu(s)-a)ds and
+    c_nu=[1+a int_0^infinity exp(-A_nu(t))dt]^{-1}.
+    Then lim_{N->infinity}alpha_k(N;nu)=1-(1-c_nu)^k.
+    For stationary initial law mu(dr)=lambda F(dr)/r, with
+    lambda=[int r^{-1}F(dr)]^{-1}, this equals 1-(a/lambda)^k.
+    For fresh initial law nu=F and nondegenerate F, the limit is strictly
+    greater than 1-(a/lambda)^k. This disproves Conjecture 2 of the source
+    under its explicit fresh-initialisation convention.
+  exclusions:
+    - Does not establish a fixation-limit theorem for arbitrary favourable-rate laws beyond finite separated-support mixtures.
+    - Does not handle overlapping A and B rate supports in the fixation-limit proof.
+    - Does not claim a new formula for time-inhomogeneous birth-death survival.
+    - Does not claim first discovery that age structure affects fixation.
+    - Does not treat numerical simulation as proof of the infinite-population limit.
+source:
+  originating_reference: 'Ganesh, Hauert, and Valla (2025), Consensus in the weighted voter model with noise-free and noisy observations, Conjecture 2, Section 3'
+  url: 'https://doi.org/10.1007/s11721-025-00248-z'
+  full_text: 'https://link.springer.com/article/10.1007/s11721-025-00248-z'
+  critical_locators:
+    - 'Section 1.1: redraws after every opinion update, including unchanged opinion.'
+    - 'Section 3, preamble: quality T is mean holding time, realised holding time is Exp(1/T).'
+    - 'Equations (5)-(6): the rate distribution G_B and harmonic mean lambda are equilibrium quantities.'
+    - 'Conjecture 2: initial T_A and T_B sampled as above (fresh, not equilibrium rate law).'
+normalisation:
+  indices: 'A count m; B count n=N-m; two-phase slow B count j=0,...,n.'
+  scaling: 'Time scaled so the principal witness has a=1; multiplying all rates by a common positive constant leaves fixation unchanged.'
+  basis_order: 'Finite killed generators ordered lexicographically by (m,j), m=1,...,N-1, j=0,...,N-m.'
+  symmetries: ['Vertex permutation on K_N', 'Permutation of phase labels', 'Common positive scaling of all rates']
+sequences:
+  - name: 'Exact fresh one-mutant fixation, a=1 and F=(delta_2+delta_6)/2, N=2,3,4,5'
+    exact_values: ['16/21', '2864/4051', '443968/639901', '310846319872/449354284245']
+    natural_scalings: ['Numerators: 16,2864,443968,310846319872', 'Denominators: 21,4051,639901,449354284245']
+  - name: 'Number of transient opinion/phase-count states, N=2,...,7'
+    exact_values: ['2', '5', '9', '14', '20', '27']
+    natural_scalings: ['(N-1)(N+2)/2; a generic triangular state-space count, not a novelty claim']
+  - name: 'Fresh renewal density derivatives at zero, principal witness'
+    exact_values: ['4', '-4', '16', '-64', '256', '-1024', '4096']
+    natural_scalings: ['b(t)=3+exp(-4t); derivatives after order zero are (-4)^j']
+generating_functions:
+  - name: 'Resident renewal intensity Laplace transform'
+    expression: 'h_nu(z)/(1-h_F(z)), h_eta(z)=int r/(z+r) eta(dr)'
+    variables: ['z']
+  - name: 'Principal witness resident renewal intensity Laplace transform'
+    expression: '3/z+1/(z+4)=4*(z+3)/(z*(z+4))'
+    variables: ['z']
+  - name: 'Rare-lineage probability generating function, initial count one'
+    expression: '1-(1-s)/((1+J(t))*(1-s)+exp(-A(t))*s), J(t)=a*int_0^t exp(-A(u))du'
+    variables: ['s', 't']
+matrices:
+  - name: 'Principal witness resident phase generator, column convention'
+    entries: [['-1','3'],['1','-3']]
+  - name: 'N=2 negative killed generator, principal witness'
+    entries: [['7','0'],['0','3']]
+  - name: 'N=3 negative killed generator, principal witness'
+    entries:
+      - ['10','-3','0','-6','0']
+      - ['-1/2','7','-3/2','-1','-3']
+      - ['0','-1','4','0','-2']
+      - ['-1/2','-1/2','0','7','0']
+      - ['0','-1/2','-1/2','0','3']
+aliases:
+  analysis: ['Renewal equation', 'Volterra equation', 'Rank-one perturbation of a diagonal generator', 'Reversible semigroup covariance']
+  probability: ['Biased voter model', 'Death-birth Moran process with renewed rates', 'Hyperexponential lifetimes', 'Delayed renewal process', 'Branching process in a varying environment', 'Time-inhomogeneous linear birth-death process']
+  combinatorics: ['Absorbing count-chain harmonic function', 'Complete-graph lumping', 'Birth-death gambler ruin']
+  mathematical_physics: ['Non-Markovian voter model', 'Age-dependent opinion dynamics', 'Stochastic resetting with state-dependent reset rate']
+  statistics_optimisation_ml: ['Swarm consensus', 'Best-of-two collective decision making', 'Initialisation bias', 'Annealed rate disorder']
+known_invariants:
+  principal_phase_generator: {rank: 1, trace: '-4', determinant: '0', characteristic_polynomial: 'z*(z+4)', stationary_distribution: ['3/4','1/4']}
+  principal_fresh_intensity: 'b(0)=4; b(infinity)=3; U(t)=3t+(1-exp(-4t))/4'
+  principal_fixation: 'c=[1+(sqrt(pi)/2)*exp(-1/4)*erfi(1/2)]^{-1}=0.702032053928...'
+  source_prediction: '2/3'
+search_constraints:
+  primary_sources_only_for_technical_claims: true
+  databases_or_corpora: ['arXiv', 'Publisher full texts', 'PMC full texts', 'University repositories', 'Web full-text index']
+strengthened_claims:
+  - id: compact_resident_strict_bias
+    exact_statement: |
+      Let F be a nondegenerate probability law on [b_minus,b_plus], with
+      0<a<b_minus<=b_plus<infinity, lambda=(E_F[1/R])^{-1}, and
+      mu(dr)=lambda F(dr)/r. For the bounded reversible reset generator
+      Lf(r)=r(int f dF-f(r)), the fresh resident intensity satisfies
+      b_F(t)-lambda=<R-lambda,exp(tL)(R-lambda)>_{L2(mu)}/lambda>0
+      at every finite t>=0. Consequently c_F>1-a/lambda.
+    novelty_boundary: 'Renewal monotonicity is classical; the claim is its consequence for the corrected source-model fixation limit.'
+  - id: sharp_fixed_harmonic_mean_envelope
+    exact_statement: |
+      Fix 0<a<b<lambda. Over all compactly supported resident-rate laws F
+      on [b,infinity) with (E_F[1/R])^{-1}=lambda, and fresh initialisation,
+      sup_F c_F=(lambda-a)/(lambda-a+a exp(-(lambda/b-1))).
+      The supremum is approached by F_R=p_R delta_b+(1-p_R)delta_R,
+      R>lambda tending to infinity, where
+      p_R=b(R-lambda)/(lambda(R-b)).
+      It is not attained by a finite-rate law with harmonic mean lambda>b.
+    invariants:
+      renewal_excess: 'D=int_0^infinity(b_F(t)-lambda)dt=E_F[R^{-2}]/(E_F[R^{-1}])^2-1'
+      moment_bound: 'D<=lambda/b-1'
+      branching_functional_bound: 'c_F<=(lambda-a)/(lambda-a+a exp(-D))'
+    novelty_boundary: 'The renewal excess identity and moment inequality are classical in form; the sharp fixation functional and extremising source-model family were not found in the recorded bounded search.'
+  - id: finite_upper_support_bound
+    exact_statement: |
+      If additionally F is supported on [b,B], a<b<=lambda<=B<infinity,
+      then D<=(lambda-b)(B-lambda)/(b B), hence
+      c_F<=(lambda-a)/(lambda-a+a exp(-(lambda-b)(B-lambda)/(b B))).
+    novelty_boundary: 'The moment bound is elementary and sharp for its moment problem; the fixation bound is not asserted sharp for fixed finite B.'
+  - id: sharp_global_single_founder_error
+    exact_statement: |
+      Over the constant-favourable-rate, compact resident-rate class with
+      separated supports, the supremum of the asymptotic fresh fixation
+      error c_F-(1-a/lambda) is max_{t>0} g(t), where
+      g(t)=t/(t+exp(-t))-t/(1+t).
+      The positive maximiser is unique. It lies strictly between
+      1.71891151345837 and 1.71891151345839, and the maximal error lies
+      strictly between 0.273355434321512683887747078798 and
+      0.273355434321518094791934130376.
+      This is an asymptotic single-founder supremum, approached by a
+      sequence of finite two-rate models; it is not a finite-N bound.
+    certificate: '../certified_limits.json'
+  - id: pre_ageing
+    exact_statement: |
+      Initialise resident rates with F exp(tau L) for tau>=0.
+      For nondegenerate F, c_tau strictly decreases to 1-a/lambda.
+      If b=min support(F)>a and D is the full fresh renewal excess, then
+      0<c_tau-(1-a/lambda)<=D exp(-b tau)/4.
+    novelty_boundary: 'A consequence of the identified fixation functional and a reversible spectral gap; no independent novelty claim for semigroup decay.'
+  - id: finite_favourable_type_extension
+    exact_statement: |
+      Let favourable rates a_i>0 form a finite family, with redraw
+      probabilities p_i and initial type probabilities nu_A,i, and let
+      max_i a_i<b_minus. Let resident reset and initial laws F,nu be compactly
+      supported on [b_minus,b_plus]. For each terminal time T and s<=T,
+      let q_i^(T)(s) be the backward extinction probabilities solving
+      dq_i/ds=a_i(q_i-1)+b_nu(s)q_i(1-sum_j p_j q_j),
+      with q_i^(T)(T)=0. Let q_i(s)=lim_{T->infinity}q_i^(T)(s).
+      Then, from fixed k independently typed favourable founders,
+      lim_{N->infinity}alpha_k(N;nu,nu_A)
+      =1-(sum_i nu_A,i q_i(0))^k.
+      Under resident equilibrium, q_i=a_i/(a_i+lambda c) and
+      c=sum_i p_i lambda c/(a_i+lambda c), recovering the stationary
+      branching fixed point with the additional equilibrium initialisation.
+    exclusions: ['No overlapping-support claim', 'No arbitrary continuous favourable-type theorem is claimed']
+  - id: strict_fresh_bias_for_finite_favourable_types
+    exact_statement: |
+      Under the finite favourable-type extension and nondegenerate F,
+      every fixed k>=1 and common initial favourable-type law nu_A have
+      strictly greater limiting fixation with fresh residents than with
+      equilibrium residents. For each initial type i and every T>0, put
+      d(t)=b_F(t)-lambda>0. The stationary minus fresh extinction
+      probability is at least
+      (exp(-a_i*T)-exp(-2*a_i*T))*exp(-2*lambda*T)
+      *(1-exp(-int_0^T d(t)dt))*(1-a_max/b_minus)>0.
+    proof_identity: 'Classical branching birth-rate coupling plus a strictly positive separating event; a consequence for the corrected source model, not a new coupling principle.'
+verification:
+  exact_arithmetic:
+    cases: ['a=1,F=(delta_2+delta_6)/2,N=2,3,4,5', 'a=1,F=(delta_2+9 delta_100)/10,N=2,3,4,5']
+    checks: ['All harmonic-equation residuals zero with Fraction arithmetic', 'Cayley-Hamilton identity', 'Determinant and characteristic-polynomial consistency']
+  independent_numeric_construction:
+    labelled_vertex_generator_N: [2, 3, 4]
+    sparse_count_generator_N: [10, 25, 50, 100, 200]
+    caveat: 'Floating-point results and residuals are numerical checks; only explicitly rational calculations are certificates.'
+  files: ['verify_finite_n.py', 'finite_n_verification.json', 'finite_n_values.csv']
+novelty_audit:
+  report: 'novelty_report.md'
+  result: 'No prior statement of the corrected source-model limit or the sharp fixation envelope was found in the recorded bounded search.'
+  classical_collisions: ['Kendall time-dependent birth-death process', 'Uecker-Hermisson fixation integral', 'Brown DFR renewal monotonicity', 'Known initial age effects on invasion and fixation', 'Elementary finite-support variance inequality']
+  missingness: ['No complete MathSciNet or citation-graph audit', 'Original Kendall and Brown full texts not fully inspected', 'No author correspondence', 'Some PMC direct requests were blocked']

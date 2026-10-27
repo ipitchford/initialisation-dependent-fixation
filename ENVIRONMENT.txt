@@ -1,0 +1,7 @@
+Local replay (27 October 2026)
+  macOS (Apple silicon), Darwin 27.0
+  Python 3.11.14 (uv-managed CPython), run as `uv run --no-project [--with numpy --with scipy] python3 -I`
+  NumPy 2.4.6, SciPy 1.17.1 (uv-resolved); certify_limits.py and negative_controls.py use the standard library only
+  PDF: Pandoc (Homebrew) + XeLaTeX (TinyTeX), Latin Modern OpenType
+CI (GitHub Actions)
+  ubuntu-latest, Python 3.12, numpy==2.4.6, scipy==1.17.1 (requirements.txt)

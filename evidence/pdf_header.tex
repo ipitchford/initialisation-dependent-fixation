@@ -1,0 +1,24 @@
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\definecolor{DocPlum}{HTML}{67445E}
+\definecolor{DocGrey}{HTML}{62685F}
+\titleformat{\section}{\large\bfseries\color{DocPlum}}{}{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{DocPlum}}{}{0em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\section}{0pt}{2.0ex plus .8ex minus .2ex}{1.0ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{1.8ex plus .6ex minus .2ex}{.7ex plus .2ex}
+\setlength{\emergencystretch}{3em}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{DocGrey}Initialisation-dependent fixation}
+\fancyhead[R]{\small\color{DocGrey}Revised 27 October 2026}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.25pt}
+\renewcommand{\footrulewidth}{0pt}
+\raggedbottom
+\AtBeginEnvironment{longtable}{\small}
+% The manuscript has no code blocks, so no verbatim package is needed.

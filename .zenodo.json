@@ -1,0 +1,44 @@
+{
+  "title": "Initialisation-dependent fixation in noisy weighted voter models: a resolution of Conjecture 2 of Ganesh, Hauert and Valla",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "<p><strong>Unrefereed research candidate.</strong> In the noisy weighted voter model of Ganesh, Hauert and Valla (Swarm Intelligence 19(3), 173&ndash;214, 2025), agents advertise an option for a random time whose mean reflects a noisy quality measurement, then copy a random neighbour. Their Conjecture 2 predicts the large-population probability that k agents holding the better option win, using a branching process built from the <em>equilibrium</em> law of signalling rates, although the conjecture specifies <em>freshly sampled</em> initial rates.</p><p>On the complete graph, with bounded rates and every favourable rate strictly below every resident rate, this package proves the population limit for arbitrary initial rate laws: it is governed by the transient mean resident rate. Freshly sampled residents update faster at first (the inspection paradox), so whenever resident rates vary the better option wins strictly more often than conjectured.</p><p><strong>Refuted:</strong> Conjecture 2 as stated (fresh start) whenever resident rates vary &mdash; e.g. favourable rates 1/2 or 1 and resident rates 2 or 6 give 0.7842&hellip; rather than (3+&radic;37)/12 = 0.7569&hellip;; constant favourable rate 1 gives 0.70203&hellip; rather than 2/3. Also refuted under the equilibrium start when favourable rates vary, where the limit is 1&minus;(E T<sub>B</sub>/E T<sub>A</sub>)<sup>k</sup>. <strong>Confirmed:</strong> the conjectured formula is exact under the equilibrium start (as simulated by the source) for a constant favourable rate. The single-founder underestimate has supremum 27.3355 percentage points, not attained; an explicit burn-in removes it.</p><p>The archive contains the 28-page manuscript (PDF, Markdown and LaTeX), exact rational certificates, finite-population and multitype scripts with receipts, semantic negative controls, CI and SHA-256 sums. Assurance boundary: written proofs; internal AI-assisted review (five-role review, two outside-model audits, a verification re-review and a targeted proof audit). Not peer review, independent reproduction or formal verification. Creator: Anonymous. Text and data CC0-1.0; code MIT.</p>",
+  "creators": [
+    {
+      "name": "Anonymous"
+    }
+  ],
+  "version": "1.0.0-candidate",
+  "doi": "10.5281/zenodo.23687032",
+  "publication_date": "2026-10-27",
+  "access_right": "open",
+  "license": "cc-zero",
+  "keywords": [
+    "weighted voter model",
+    "fixation probability",
+    "inspection paradox",
+    "renewal process",
+    "branching process",
+    "swarm robotics",
+    "consensus",
+    "counterexample"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/ipitchford/initialisation-dependent-fixation/tree/v1.0.0-candidate",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://evidencepress.org/releases/initialisation-dependent-fixation/",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.1007/s11721-025-00248-z",
+      "relation": "references",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "Original code (*.py, CI workflow) is released under the MIT licence; see LICENSES.md in the archive. Short verbatim quotations from Ganesh, Hauert and Valla remain the source authors' text."
+}

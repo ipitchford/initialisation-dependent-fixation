@@ -1,0 +1,41 @@
+# SPDX-License-Identifier: MIT
+name: Replay
+on:
+  push:
+  pull_request:
+jobs:
+  quick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check SHA256SUMS
+        run: sha256sum -c SHA256SUMS
+      - name: Install pinned packages
+        run: python -m pip install -r requirements.txt
+      - name: Exact rational certificates (standard library), compared with receipt
+        run: |
+          mkdir -p "$RUNNER_TEMP/c/consensus" && cp consensus/certify_limits.py "$RUNNER_TEMP/c/consensus/"
+          python -B -I "$RUNNER_TEMP/c/consensus/certify_limits.py" > /dev/null
+          cmp "$RUNNER_TEMP/c/consensus/certified_limits.json" consensus/certified_limits.json
+      - name: Semantic negative controls
+        run: python -B -I negative_controls.py
+      - name: Working tree unchanged
+        run: test -z "$(git status --porcelain)"
+  full-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned packages
+        run: python -m pip install -r requirements.txt
+      - name: Replay all four scripts in a temporary copy and compare exact outputs
+        run: python -B -I evidence/run_checks.py
+      - name: Working tree unchanged
+        run: test -z "$(git status --porcelain)"

@@ -1,0 +1,194 @@
+{
+ "schemaVersion": "1.0",
+ "provenance": "Compiled 27 October 2026 for release 1.0.0-candidate from the dated formula-first novelty audit of 19 October 2026 (consensus/evidence/novelty_report.md), the domain review and revision of 27 October 2026, and the final outside-model audit. No search was rerun at release preparation.",
+ "contributionMap": [
+  {
+   "claim": "Corrected fresh-start fixation limit for the reset-and-copy model (Theorem 1/4): governed by the transient mean resident rate b_nu(t).",
+   "unit": "statement",
+   "paperLocation": "Theorems 1 and 4",
+   "searches": [
+    {
+     "date": "2026-10-19",
+     "query": "\"Ganesh\" \"Hauert\" \"Valla\" \"Conjecture 2\"; \"weighted voter\" \"renewal\" \"fixation\"; \"noisy weighted voter\" \"initial\" \"equilibrium\"; \"noisy weighted voter\" conjecture counterexample",
+     "corpus": "public web and full-text index; arXiv; Crossref; publisher pages (bounded novelty audit)"
+    }
+   ],
+   "closestPriorWork": "Ganesh, Hauert and Valla 2025, Conjecture 2 and Section 4.7; Uecker and Hermisson 2011 (time-dependent branching fixation)",
+   "verdict": "new-in-bounded-search"
+  },
+  {
+   "claim": "Strict fresh-versus-stationary bias for every non-degenerate resident law (Theorem 2).",
+   "unit": "statement",
+   "paperLocation": "Theorem 2",
+   "searches": [
+    {
+     "date": "2026-10-19",
+     "query": "\"renewal density\" \"mixture of exponentials\" decreasing; \"renewal density\" \"completely monotone\" mixture; \"fixation\" \"resident\" \"initial distribution\" \"age\"",
+     "corpus": "public web and full-text index; arXiv; Crossref; publisher pages (bounded novelty audit)"
+    }
+   ],
+   "closestPriorWork": "Brown 1980 (renewal monotonicity for DFR laws); Shpak 2007; Jafarpour et al. 2023",
+   "verdict": "partially-known-cited"
+  },
+  {
+   "claim": "Sharp envelope and global supremum 27.3355 percentage points (Theorem 3, Proposition 5.1).",
+   "unit": "statement",
+   "paperLocation": "Theorem 3; Proposition 5.1",
+   "searches": [
+    {
+     "date": "2026-10-19",
+     "query": "\"maximum error\" stationary fixation; harmonic-mean fixation approximation; sharp initialisation envelope; exact-form search of t/(t+e^{-t})-t/(1+t)",
+     "corpus": "public web and full-text index; arXiv; Crossref; publisher pages (bounded novelty audit)"
+    }
+   ],
+   "closestPriorWork": "Classical renewal constant D = E R^-2/(E R^-1)^2 - 1; Hubbarde et al. 2007 (burst-death)",
+   "verdict": "new-in-bounded-search"
+  },
+  {
+   "claim": "Equilibrium-start mean-quality identity 1-(E T_B/E T_A)^k (Theorem 6).",
+   "unit": "statement",
+   "paperLocation": "Theorem 6",
+   "searches": [
+    {
+     "date": "2026-10-27",
+     "query": "review positioning: source Theorem 5 and Section 4.7; size-biased initial types; reproductive-value weighting in multitype branching",
+     "corpus": "source full text; Athreya and Ney 1972 (revision and final audit)"
+    }
+   ],
+   "closestPriorWork": "Source Theorem 5 (stationary branching extinction); reproductive-value weighting in multitype branching theory",
+   "verdict": "partially-known-cited"
+  },
+  {
+   "claim": "Common-thinning coupling of the finite population with a time-inhomogeneous branching process, plus a configuration-uniform fixation bound (Lemmas 3.1-3.5).",
+   "unit": "method",
+   "paperLocation": "Section 3",
+   "searches": [
+    {
+     "date": "2026-10-19",
+     "query": "\"Moran\" \"renewal\" \"branching\" fixation transient; \"non-Markovian\" \"Moran\" \"fixation\"; \"voter model\" \"renewal processes\" initial; \"fixation probability\" \"time-dependent\" \"birth\" \"death\"",
+     "corpus": "public web and full-text index; arXiv; Crossref; publisher pages (bounded novelty audit)"
+    }
+   ],
+   "closestPriorWork": "Ethier and Kurtz 1986; Athreya and Ney 1972; gambler's-ruin supermartingale arguments",
+   "verdict": "known-cited"
+  }
+ ],
+ "sourcesReadInFull": [
+  {
+   "citation": "Ganesh, Hauert and Valla (2025), Swarm Intelligence 19(3):173-214",
+   "usedFor": "Model, Conjecture 2, Theorem 5, Section 4.7 simulations",
+   "readWhat": "Sections 1.1, 3 (eqs 5-7), Conjecture 2, Theorem 5, Section 4 and 4.7; quotations checked pp. 175, 184, 186, 187, 202-203",
+   "date": "2026-10-27",
+   "evidenceLocator": "https://doi.org/10.1007/s11721-025-00248-z; https://pmc.ncbi.nlm.nih.gov/articles/PMC12327191/"
+  },
+  {
+   "citation": "Uecker and Hermisson (2011), Genetics 188:915-930",
+   "usedFor": "Time-dependent branching survival formula in fixation",
+   "readWhat": "Equations (7)-(16) and attribution to Kendall",
+   "date": "2026-10-19",
+   "evidenceLocator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3176092/; consensus/evidence/novelty_report.md section 5"
+  },
+  {
+   "citation": "Jafarpour, Levien and Amir (2023), Phys. Rev. E 108:034402",
+   "usedFor": "Prior art on non-Markovian transients affecting fixation; model difference",
+   "readWhat": "Model and early invasion sections of the accepted manuscript",
+   "date": "2026-10-19",
+   "evidenceLocator": "https://doi.org/10.1103/PhysRevE.108.034402; novelty_report.md section 5"
+  },
+  {
+   "citation": "Alexandre et al. (2025), J. Theor. Biol. 599:112030",
+   "usedFor": "Transient versus asymptotic renewal quantities",
+   "readWhat": "Renewal discussion including equation (37), arXiv:2407.12560",
+   "date": "2026-10-19",
+   "evidenceLocator": "https://arxiv.org/abs/2407.12560; novelty_report.md section 5"
+  }
+ ],
+ "limitationTriage": [
+  {
+   "limitation": "Overlapping supports (source's Gamma-noise examples)",
+   "closingQuestion": "Is there a substitute for the uniform fixation comparison of Lemma 3.1?",
+   "triedOrSearched": "Considered during review; no known theorem supplies it",
+   "estimatedCost": "days to weeks of new research",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "Requires a new bridge from early survival to fixation; new research beyond this release"
+  },
+  {
+   "limitation": "Non-complete graphs",
+   "closingQuestion": "Does a local branching approximation carry over?",
+   "triedOrSearched": "Source also leaves general graphs open",
+   "estimatedCost": "weeks",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "New research"
+  },
+  {
+   "limitation": "Sharp envelope under a rate cap",
+   "closingQuestion": "Solve the optimal-timing extremal problem over laws on [b_0, bbar]",
+   "triedOrSearched": "Bracketed between attained two-point values and ceiling (43)",
+   "estimatedCost": "days",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "Optimal-timing problem not solved"
+  },
+  {
+   "limitation": "Finite-N rate",
+   "closingQuestion": "Explicit O(1/N) bound",
+   "triedOrSearched": "Tables 4-5 suggest O(1/N)",
+   "estimatedCost": "days",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "Needs a quantitative coupling bound"
+  },
+  {
+   "limitation": "Non-exponential signalling",
+   "closingQuestion": "Does the bias reverse for increasing-failure-rate laws?",
+   "triedOrSearched": "Noted in Section 9",
+   "estimatedCost": "days",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "New research"
+  },
+  {
+   "limitation": "Rate-cap ceiling claim at ratio 3 overstated as below 8 points",
+   "closingQuestion": "Recompute (43) as b_0/a->1",
+   "triedOrSearched": "Recomputed with mpmath; limit 8.2688",
+   "estimatedCost": "15 min",
+   "cheap": true,
+   "decision": "CLOSED"
+  },
+  {
+   "limitation": "Burn-in bound covered only the single-founder probability",
+   "closingQuestion": "Mean-value bound for 1-(1-c)^k",
+   "triedOrSearched": "Derived k(a/lambda)^{k-1} L D e^{-b_0 tau}",
+   "estimatedCost": "15 min",
+   "cheap": true,
+   "decision": "CLOSED"
+  },
+  {
+   "limitation": "Multitype values uncertified",
+   "closingQuestion": "Interval-arithmetic integration of (48)",
+   "triedOrSearched": "Bracket (53) proved; values numerical",
+   "estimatedCost": "3-6 h",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "The strict inequality is proved without them; certification would only sharpen displayed digits"
+  }
+ ],
+ "extensionScout": {
+  "by": "Internal AI review panel (editor and domain reviewers) and the revising agent",
+  "date": "2026-10-27",
+  "proposals": [
+   "Random favourable rates (vector coupling)",
+   "Equilibrium-start identity",
+   "Rate-cap table",
+   "Burn-in bound",
+   "Interval-arithmetic multitype bracket"
+  ],
+  "actions": [
+   "Theorem 4, Theorem 6 and Corollary 7 added",
+   "Table 3 and Section 6 added",
+   "Interval-arithmetic bracket not done; values labelled numerical"
+  ]
+ }
+}

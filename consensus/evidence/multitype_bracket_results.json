@@ -1,0 +1,352 @@
+{
+  "status": "FLOATING-POINT APPROXIMATIONS ONLY. The analytical inequalities are proved, but these ODE outputs are not certified enclosures.",
+  "method": "SciPy solve_ivp DOP853, with selected independent Radau comparisons",
+  "rtol": 2e-12,
+  "atol": 2e-14,
+  "numpy_version": "2.4.6",
+  "scipy_version": "1.17.1",
+  "model": {
+    "A_rates": [
+      0.5,
+      1.0
+    ],
+    "A_redraw_probabilities": [
+      0.5,
+      0.5
+    ],
+    "A_initial_probabilities": [
+      0.5,
+      0.5
+    ],
+    "B_rates": [
+      2.0,
+      6.0
+    ],
+    "B_redraw_probabilities": [
+      0.5,
+      0.5
+    ],
+    "fresh_B_initial_probabilities": [
+      0.5,
+      0.5
+    ],
+    "equilibrium_B_initial_probabilities": [
+      0.75,
+      0.25
+    ],
+    "fresh_B_intensity": "3+exp(-4*t)",
+    "equilibrium_B_intensity": "3",
+    "q": 0.5,
+    "founders": 1
+  },
+  "fresh_multitype": [
+    {
+      "T": 0.0,
+      "lower_approx": 0.5,
+      "upper_approx": 1.0,
+      "width_approx": 0.5,
+      "Q_zero_at_0": [
+        0.0,
+        0.0
+      ],
+      "Q_q_at_0": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "T": 0.5,
+      "lower_approx": 0.6866017669963972,
+      "upper_approx": 0.8360150661781882,
+      "width_approx": 0.14941329918179103,
+      "Q_zero_at_0": [
+        0.11581435855648269,
+        0.21215550908714095
+      ],
+      "Q_q_at_0": [
+        0.27383674250838946,
+        0.35295972349881616
+      ]
+    },
+    {
+      "T": 1.0,
+      "lower_approx": 0.7507682917653044,
+      "upper_approx": 0.7996005016913348,
+      "width_approx": 0.048832209926030434,
+      "Q_zero_at_0": [
+        0.1453114187533497,
+        0.2554875778639807
+      ],
+      "Q_q_at_0": [
+        0.19750789953664233,
+        0.30095551693274897
+      ]
+    },
+    {
+      "T": 2.0,
+      "lower_approx": 0.7806090311249765,
+      "upper_approx": 0.7857392586988171,
+      "width_approx": 0.005130227573840629,
+      "Q_zero_at_0": [
+        0.15780126195876626,
+        0.2707202206435996
+      ],
+      "Q_q_at_0": [
+        0.16330012324223395,
+        0.27548181450781295
+      ]
+    },
+    {
+      "T": 4.0,
+      "lower_approx": 0.7841882233732012,
+      "upper_approx": 0.7842430477331765,
+      "width_approx": 5.48243599753917e-05,
+      "Q_zero_at_0": [
+        0.1592889487878004,
+        0.27222495574584654
+      ],
+      "Q_q_at_0": [
+        0.15934772067674866,
+        0.2722758325768491
+      ]
+    },
+    {
+      "T": 8.0,
+      "lower_approx": 0.7842272885050048,
+      "upper_approx": 0.7842272947339526,
+      "width_approx": 6.228947802000562e-09,
+      "Q_zero_at_0": [
+        0.15930557068163348,
+        0.27223983985046146
+      ],
+      "Q_q_at_0": [
+        0.15930557735898082,
+        0.2722398456310095
+      ]
+    },
+    {
+      "T": 12.0,
+      "lower_approx": 0.7842272929532483,
+      "upper_approx": 0.7842272929539755,
+      "width_approx": 7.271960811294775e-13,
+      "Q_zero_at_0": [
+        0.15930557258836098,
+        0.27223984150368785
+      ],
+      "Q_q_at_0": [
+        0.1593055725891339,
+        0.2722398415043693
+      ]
+    }
+  ],
+  "equilibrium_multitype": [
+    {
+      "T": 0.0,
+      "lower_approx": 0.5,
+      "upper_approx": 1.0,
+      "width_approx": 0.5,
+      "Q_zero_at_0": [
+        0.0,
+        0.0
+      ],
+      "Q_q_at_0": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "T": 0.5,
+      "lower_approx": 0.6476160415827706,
+      "upper_approx": 0.8189361656936274,
+      "width_approx": 0.17132012411085673,
+      "Q_zero_at_0": [
+        0.12817922815890873,
+        0.23394844045383661
+      ],
+      "Q_q_at_0": [
+        0.31056272652072886,
+        0.39420519031372986
+      ]
+    },
+    {
+      "T": 1.0,
+      "lower_approx": 0.7175130646225711,
+      "upper_approx": 0.7753207166257795,
+      "width_approx": 0.057807652003208365,
+      "Q_zero_at_0": [
+        0.16359697385102379,
+        0.28576159289741715
+      ],
+      "Q_q_at_0": [
+        0.2259589023191021,
+        0.3390149684357556
+      ]
+    },
+    {
+      "T": 2.0,
+      "lower_approx": 0.7525769256612155,
+      "upper_approx": 0.7587044427577926,
+      "width_approx": 0.006127517096577106,
+      "Q_zero_at_0": [
+        0.17864752049743954,
+        0.3039435939869753
+      ],
+      "Q_q_at_0": [
+        0.18528100130608904,
+        0.30956514737148005
+      ]
+    },
+    {
+      "T": 4.0,
+      "lower_approx": 0.7568501793397724,
+      "upper_approx": 0.7569157075627732,
+      "width_approx": 6.552822300076588e-05,
+      "Q_zero_at_0": [
+        0.18044036167375108,
+        0.3057282232007026
+      ],
+      "Q_q_at_0": [
+        0.18051131314986016,
+        0.3057883281705951
+      ]
+    },
+    {
+      "T": 8.0,
+      "lower_approx": 0.7568968722077163,
+      "upper_approx": 0.756896879652484,
+      "width_approx": 7.444767691211496e-09,
+      "Q_zero_at_0": [
+        0.18046041941435936,
+        0.3057458212806727
+      ],
+      "Q_q_at_0": [
+        0.180460427475275,
+        0.3057458281092924
+      ]
+    },
+    {
+      "T": 12.0,
+      "lower_approx": 0.7568968775242478,
+      "upper_approx": 0.7568968775250933,
+      "width_approx": 8.454348332520567e-13,
+      "Q_zero_at_0": [
+        0.18046042171610832,
+        0.30574582323370514
+      ],
+      "Q_q_at_0": [
+        0.18046042171702414,
+        0.30574582323448024
+      ]
+    }
+  ],
+  "fresh_scalar_check": [
+    {
+      "T": 0.0,
+      "lower_approx": 0.5,
+      "upper_approx": 1.0,
+      "width_approx": 0.5,
+      "Q_zero_at_0": [
+        0.0
+      ],
+      "Q_q_at_0": [
+        0.5
+      ]
+    },
+    {
+      "T": 0.5,
+      "lower_approx": 0.6345515633976786,
+      "upper_approx": 0.7815236177628833,
+      "width_approx": 0.14697205436520466,
+      "Q_zero_at_0": [
+        0.21847638223711677
+      ],
+      "Q_q_at_0": [
+        0.36544843660232146
+      ]
+    },
+    {
+      "T": 1.0,
+      "lower_approx": 0.6768010083857449,
+      "upper_approx": 0.7290456469774773,
+      "width_approx": 0.05224463859173245,
+      "Q_zero_at_0": [
+        0.27095435302252263
+      ],
+      "Q_q_at_0": [
+        0.32319899161425514
+      ]
+    },
+    {
+      "T": 2.0,
+      "lower_approx": 0.6985340228434761,
+      "upper_approx": 0.7055648982943232,
+      "width_approx": 0.007030875450847129,
+      "Q_zero_at_0": [
+        0.29443510170567677
+      ],
+      "Q_q_at_0": [
+        0.3014659771565239
+      ]
+    },
+    {
+      "T": 4.0,
+      "lower_approx": 0.7019676793185066,
+      "upper_approx": 0.7020964403432746,
+      "width_approx": 0.00012876102476799822,
+      "Q_zero_at_0": [
+        0.29790355965672544
+      ],
+      "Q_q_at_0": [
+        0.2980323206814934
+      ]
+    },
+    {
+      "T": 8.0,
+      "lower_approx": 0.7020320323303431,
+      "upper_approx": 0.7020320755250914,
+      "width_approx": 4.3194748333696964e-08,
+      "Q_zero_at_0": [
+        0.2979679244749086
+      ],
+      "Q_q_at_0": [
+        0.297967967669657
+      ]
+    },
+    {
+      "T": 12.0,
+      "lower_approx": 0.7020320539207805,
+      "upper_approx": 0.7020320539352846,
+      "width_approx": 1.4504064616005508e-11,
+      "Q_zero_at_0": [
+        0.29796794606471544
+      ],
+      "Q_q_at_0": [
+        0.2979679460792195
+      ]
+    }
+  ],
+  "checks": {
+    "scalar_PGF_max_ODE_vs_quadrature_error": 7.928657730360555e-13,
+    "scalar_fresh_limit_erfi_approx": 0.7020320539282128,
+    "equilibrium_multitype_limit_expression": "(3+sqrt(37))/12",
+    "equilibrium_multitype_limit_approx": 0.7568968775248517,
+    "equilibrium_fixed_point_residual": 1.1102230246251565e-16,
+    "equilibrium_terminal_fixed_point_max_drift": 2.886579864025407e-15,
+    "independent_ODE_algorithm_comparisons": [
+      {
+        "T": 2.0,
+        "DOP853_vs_Radau_max_difference": 1.4155343563970746e-13
+      },
+      {
+        "T": 4.0,
+        "DOP853_vs_Radau_max_difference": 1.2634338020234281e-13
+      },
+      {
+        "T": 8.0,
+        "DOP853_vs_Radau_max_difference": 4.221067939624845e-13
+      }
+    ],
+    "monotonicity_numerical_tolerance": 1e-10,
+    "all_checks_passed": true
+  }
+}
